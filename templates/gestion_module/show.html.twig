@@ -1,0 +1,55 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Matiere{% endblock %}
+
+{% block body %}
+    <h1>Matiere</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ matiere.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom matiére</th>
+                <td>{{ matiere.nomModule }}</td>
+            </tr>
+            <tr>
+                <th>Réference</th>
+                <td>{{ matiere.reference }}</td>
+            </tr>
+            <tr>
+                <th>Nombre heures</th>
+                <td>{{ matiere.nombreHeures }}</td>
+            </tr>
+            <tr>
+                <th>Classe</th>
+                <td>{{ matiere.classe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('gestion_module_index') }}" class="btn btn-info">retourner à la liste</a>
+
+    <a href="{{ path('gestion_module_edit', {'id': matiere.id}) }}" class="btn btn-warning"style="margin-left:30%">Modifier</a>
+
+   <div style="margin-top:-30px;margin-left:80%"> {{ include('gestion_module/_delete_form.html.twig') }} </div>
+
+
+   <table classe="bouton">
+   <tr>
+    {% if matiere.classe=="I1 études et développement"%}
+    <a href="{{ path('I1_dev') }}" class="btn btn-success">Liste des étudiants de la classe</a>
+    {% endif %}
+    {% if matiere.classe=="I2 études et développement"%}
+    <a href="{{ path('I2_dev') }}" class="btn btn-success">Liste des étudiants de la classe</a>
+    {% endif %}
+    {% if matiere.classe=="Réseaux et infrastructure"%}
+    <a href="{{ path('infra') }}" class="btn btn-success">Liste des étudiants de la classe</a>
+    {% endif %}
+    </tr>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Dachboard{% endblock %}
+
+{% block body %}
+<div class="row">
+          <a href="{{ path('etudiant_index') }}">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box blue-bg">
+              <img src="etud.png" style="margin-left:39%" width="60px"height="60px">
+              <div class="count text-center">
+
+                {{etudiants | length}}
+              </div>
+              <div class="title text-center">Etudiants</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          </a>
+          <!--/.col-->
+
+          <a href="{{ path('etudiant_index') }}">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+                 <img src="classroom.png"style="margin-left:39%" width="60px"height="60px">
+              <div class="count text-center">3</div>
+              <div class="title text-center">Classes</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          </a>
+          <!--/.col-->
+<!--
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box dark-bg">
+              <i class="fa fa-thumbs-o-up"></i>
+              <div class="count">4.362</div>
+              <div class="title">Order</div>
+            </div>
+          </div>
+            <!--/.info-box-->
+          
+          <!--/.col-->
+          <a href="{{ path('gestion_module_index') }}">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box yellow-bg">
+    <img src="matiere.jpg"style="margin-left:39%" width="60px"height="60px">
+              <div class="count text-center">{{matieres | length}}</div>
+              <div class="title text-center">Matiéres</div>
+            </div>
+          </div>
+            <!--/.info-box-->
+          </a>
+          <!--/.col-->
+
+        </div>
+         
+          <!--/col-->
+       
+          <!--/col-->
+
+        </div>
+        {% endblock %}

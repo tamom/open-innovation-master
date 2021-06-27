@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %} Inscription {% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<h1 style="margin-left:40%;font-size:45px;font-weight:bold;color:#800000;margin-bottom:30px;font-family:Times New Roman;">Inscription </h1>
+<div style="max-width:750px;margin-left:20%" >
+{{form_start(form)}}
+
+{{form_row(form.username,{'label': 'Nom d\'utilisateur ','attr':{'placeholder':'Votre nom ...'}}) }}
+{{form_row(form.email,{'label': 'Adresse E-mail ','attr':{'placeholder':'Votre email...'}}) }}
+{{form_row(form.password,{'label': 'Mot de passe ','attr':{'placeholder':'Votre mot de passe...'}}) }}
+{{form_row(form.comfirm_password,{'label': 'confirmer votre mot de passe ','attr':{'placeholder':'comfirmer votre mot de passe  ...'}})}}
+
+<button type="submit" class="btn btn-info">Inscription </button>
+<a href="{{path('app_login')}}" class="btn btn-danger" style="margin-left:30px">Annuler</a>
+{{form_end (form)}}
+</div>
+
+
+{% endblock %}

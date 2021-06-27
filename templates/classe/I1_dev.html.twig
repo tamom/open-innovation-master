@@ -1,0 +1,52 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Classe I1 Etudes et développement {% endblock %}
+
+{% block body %}
+    <h1>Classe I1 études et développement</h1>
+
+    <table class="table">
+        <thead class="">
+            <tr class="">
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Absence</th>
+                <th>actions</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for etudiant in etudiants %}
+            <tr>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.email }}</td>
+                <td>{{etudiant.absence}}</td>
+                <td>
+                    <a href="{{ path('etudiant_show', {'id': etudiant.id}) }}" class="btn btn-info">Détails</a>
+                    <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}" class="btn btn-warning">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('classe_etudiant_new') }}" class="btn btn-primary">Ajouter un nouveau etudiant</a>
+    
+    
+  <input id="impression" name="impression" type="button" onclick="imprimer_page()" value="Imprimer" class="btn btn-success" style="margin-left:50px"/>
+
+
+
+<script type="text/javascript">
+function imprimer_page(){
+  window.print();
+}
+</script>
+{% endblock %}

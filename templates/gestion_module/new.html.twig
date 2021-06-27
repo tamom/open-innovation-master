@@ -1,0 +1,11 @@
+{% extends 'template.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}Ajouter un nouveau matiere{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau Matiere</h1>
+
+    {{ include('gestion_module/_form.html.twig') }}
+
+    <a href="{{ path('gestion_module_index') }}" class="btn btn-success" style="margin-top:-50px;margin-left:200px">retourner à la liste</a>
+{% endblock %}
